@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "truckerfetch": {
+      "url": "https://truckerfetch.com/api/mcp",
+      "auth": { "CLIENT_ID": "truckerfetch-cursor", "scopes": ["data:read"] }
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "truckerfetch": {
+      "command": "node",
+      "args": ["/absolute/path/to/truckerfetch-mcp/src/index.mjs"],
+      "env": { "TRUCKERFETCH_API_KEY": "<configure securely in your client; never commit a real key>" }
+    }
+  }
+}

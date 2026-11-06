@@ -1,0 +1,11 @@
+{
+  "source": "truckerfetch-com",
+  "files": {
+    "lib/truckerfetch/interfaces.ts": "1c611da5757fc9df00dd63bd07cf362c63ea9a043df946dd0588207e16ec3191",
+    "lib/truckerfetch/policy.ts": "bf6432c1dbc843a872a4ebad6ac697b8eea90d885a8c0949a7d666f1b3197294",
+    "lib/truckerfetch/watch-policy.ts": "961e57d2e205e3bf0e1780106777932f64e59d5d7835b5e67ddd29610d799a73",
+    "lib/truckerfetch/watch-kinds.ts": "f7a7004c2f10a0b973a186d8786c0f66f67ded1c2bd778c7653a12144a999c9c",
+    "lib/utils/site.ts": "1b824a27fd1fb8769ab1c466a535655792dd18bd0d81bb23ce0a33e141c7149e"
+  },
+  "note": "Generated public contracts only; no customer records or server source."
+}

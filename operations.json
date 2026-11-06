@@ -1,0 +1,257 @@
+{
+  "get_latest_edition": {
+    "method": "GET",
+    "route": [
+      "editions",
+      "latest"
+    ],
+    "pathKeys": [],
+    "scope": "data:read",
+    "confirmation": false
+  },
+  "list_editions": {
+    "method": "GET",
+    "route": [
+      "editions"
+    ],
+    "pathKeys": [],
+    "scope": "data:read",
+    "confirmation": false
+  },
+  "search_carriers": {
+    "method": "POST",
+    "route": [
+      "carriers",
+      "search"
+    ],
+    "pathKeys": [],
+    "scope": "data:read",
+    "confirmation": false
+  },
+  "search_edition": {
+    "method": "POST",
+    "route": [
+      "editions",
+      "{edition_id}",
+      "search"
+    ],
+    "pathKeys": [
+      "edition_id"
+    ],
+    "scope": "data:read",
+    "confirmation": false
+  },
+  "get_carrier": {
+    "method": "GET",
+    "route": [
+      "carriers",
+      "{usdot}"
+    ],
+    "pathKeys": [
+      "usdot"
+    ],
+    "scope": "data:read",
+    "confirmation": false
+  },
+  "list_changes": {
+    "method": "GET",
+    "route": [
+      "changes"
+    ],
+    "pathKeys": [],
+    "scope": "data:read",
+    "confirmation": false
+  },
+  "list_authorities": {
+    "method": "GET",
+    "route": [
+      "carriers",
+      "{usdot}",
+      "authorities"
+    ],
+    "pathKeys": [
+      "usdot"
+    ],
+    "scope": "data:read",
+    "confirmation": false
+  },
+  "list_insurance_filings": {
+    "method": "GET",
+    "route": [
+      "carriers",
+      "{usdot}",
+      "insurance-filings"
+    ],
+    "pathKeys": [
+      "usdot"
+    ],
+    "scope": "insurance:read",
+    "confirmation": false
+  },
+  "search_renewals": {
+    "method": "POST",
+    "route": [
+      "renewals",
+      "search"
+    ],
+    "pathKeys": [],
+    "scope": "insurance:read",
+    "confirmation": false
+  },
+  "get_evidence": {
+    "method": "GET",
+    "route": [
+      "evidence",
+      "{evidence_id}"
+    ],
+    "pathKeys": [
+      "evidence_id"
+    ],
+    "scope": "data:read",
+    "confirmation": false
+  },
+  "list_watchlists": {
+    "method": "GET",
+    "route": [
+      "watchlists"
+    ],
+    "pathKeys": [],
+    "scope": "watchlists:read",
+    "confirmation": false
+  },
+  "get_watchlist": {
+    "method": "GET",
+    "route": [
+      "watchlists",
+      "{watchlist_id}"
+    ],
+    "pathKeys": [
+      "watchlist_id"
+    ],
+    "scope": "watchlists:read",
+    "confirmation": false
+  },
+  "list_authority_watch_targets": {
+    "method": "GET",
+    "route": [
+      "watchlists",
+      "{watchlist_id}",
+      "targets"
+    ],
+    "pathKeys": [
+      "watchlist_id"
+    ],
+    "scope": "watchlists:read",
+    "confirmation": false
+  },
+  "add_authority_watch_target": {
+    "method": "POST",
+    "route": [
+      "watchlists",
+      "{watchlist_id}",
+      "targets"
+    ],
+    "pathKeys": [
+      "watchlist_id"
+    ],
+    "scope": "watchlists:write",
+    "confirmation": true
+  },
+  "remove_authority_watch_target": {
+    "method": "DELETE",
+    "route": [
+      "watchlists",
+      "{watchlist_id}",
+      "targets",
+      "{target_id}"
+    ],
+    "pathKeys": [
+      "watchlist_id",
+      "target_id"
+    ],
+    "scope": "watchlists:write",
+    "confirmation": true
+  },
+  "update_watch_rules": {
+    "method": "PATCH",
+    "route": [
+      "watchlists",
+      "{watchlist_id}",
+      "rules"
+    ],
+    "pathKeys": [
+      "watchlist_id"
+    ],
+    "scope": "watchlists:write",
+    "confirmation": true
+  },
+  "list_watch_events": {
+    "method": "GET",
+    "route": [
+      "watchlists",
+      "{watchlist_id}",
+      "events"
+    ],
+    "pathKeys": [
+      "watchlist_id"
+    ],
+    "scope": "watchlists:read",
+    "confirmation": false
+  },
+  "create_watchlist": {
+    "method": "POST",
+    "route": [
+      "watchlists"
+    ],
+    "pathKeys": [],
+    "scope": "watchlists:write",
+    "confirmation": true
+  },
+  "add_watch_target": {
+    "method": "POST",
+    "route": [
+      "watchlists",
+      "{watchlist_id}",
+      "items"
+    ],
+    "pathKeys": [
+      "watchlist_id"
+    ],
+    "scope": "watchlists:write",
+    "confirmation": true
+  },
+  "request_export": {
+    "method": "POST",
+    "route": [
+      "exports"
+    ],
+    "pathKeys": [],
+    "scope": "exports:write",
+    "confirmation": true
+  },
+  "unlock_edition": {
+    "method": "POST",
+    "route": [
+      "editions",
+      "{edition_id}",
+      "access"
+    ],
+    "pathKeys": [
+      "edition_id"
+    ],
+    "scope": "archive:unlock",
+    "confirmation": true
+  },
+  "get_export": {
+    "method": "GET",
+    "route": [
+      "exports",
+      "{export_id}"
+    ],
+    "pathKeys": [
+      "export_id"
+    ],
+    "scope": "exports:read",
+    "confirmation": false
+  }
+}
