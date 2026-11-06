@@ -1,11 +1,11 @@
 // Maintainers run against the private application checkout; no private source is copied.
 import { registerHooks, stripTypeScriptTypes, createRequire } from 'node:module';
-import { existsSync, readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, readFileSync, writeFileSync, realpathSync, statSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { createHash } from 'node:crypto';
 
-const root = resolve(process.env.TRUCKERFETCH_SOURCE || fileURLToPath(new URL('../../truckerfetch-com/', import.meta.url)));
+const root = realpathSync(resolve(process.env.TRUCKERFETCH_SOURCE || fileURLToPath(new URL('../../truckerfetch-com/', import.meta.url))));
 const destination = fileURLToPath(new URL('../', import.meta.url));
 const check = process.argv.includes('--check');
 const sourcePaths = ['lib/truckerfetch/interfaces.ts', 'lib/truckerfetch/policy.ts', 'lib/truckerfetch/watch-policy.ts', 'lib/truckerfetch/watch-kinds.ts', 'lib/utils/site.ts'];
@@ -18,7 +18,7 @@ registerHooks({
     else if (parent && specifier.startsWith('.')) candidate = resolve(dirname(fileURLToPath(context.parentURL)), specifier);
     if (candidate) {
       for (const filename of [candidate, candidate + '.ts', candidate + '.mjs', candidate + '/index.ts']) {
-        if (existsSync(filename)) return { url: pathToFileURL(filename).href, shortCircuit: true };
+        if (existsSync(filename) && statSync(filename).isFile()) return { url: pathToFileURL(filename).href, shortCircuit: true };
       }
     }
     return next(specifier, context);
